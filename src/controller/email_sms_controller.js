@@ -1,6 +1,6 @@
 // email_Controller.js
 import axios from "axios";
-const apikey = "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";
+const apikey = "";
 
 
 class EmailController {
