@@ -3,22 +3,16 @@ import { ApiError } from "../util/apiError.js";
 class LoginController {
     async login(req, res) {
         try {
-            const { email, password } = req.body;
+            const { email, senha } = req.body;
 
+            console.log(email,senha);
+            
             // Validate inputs
-            if (!email || !password) {
+            if (!email || !senha) {
                 return res.json(new ApiError(400, 'BadRequest', 'Email and password are required'));
             }
 
-            // TODO: Find user by email in database
-            // const user = await User.findByEmail(email);
-
-            // TODO: Verify password
-            // const isValidPassword = await user.comparePassword(password);
-
-            // TODO: Generate JWT token
-            // const token = generateToken(user.id);
-
+           
             return res.status(200).json({
                 message: 'Login successful',
                 // token: token,
